@@ -47,7 +47,7 @@ public class Welcome {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (firstName.isEmpty()) {
-					System.out.println("First name cannot empty");
+					new Alert("First name cannot empty", frame);
 					return;
 				}
 			}
