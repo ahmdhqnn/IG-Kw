@@ -18,7 +18,7 @@ public class Alert {
         JPanel panel = new JPanel(new BorderLayout(5, 5));
         panel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
         panel.setBackground(GUIConstants.white);
-        
+
         JLabel title = new JLabel("Alert", 24, GUIConstants.blue, Font.BOLD);
         title.setHorizontalAlignment(JLabel.CENTER);
         panel.add(title, BorderLayout.NORTH);
