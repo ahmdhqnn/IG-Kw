@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -35,7 +36,7 @@ public class Welcome {
 		center.add(email);
 		JTextField password = new JTextField("password");
 		center.add(password);
-		JTextField confirmPassword = new JTextField("Confirm Passwordd");
+		JTextField confirmPassword = new JTextField("Confirm Password");
 		center.add(confirmPassword);
 		JButton createAcc = new JButton("Create Account", 45, 20);
 
@@ -113,6 +114,29 @@ public class Welcome {
 
 		JLabel login = new JLabel("Already have an account? Login", 20,
 				GUIConstants.black, Font.BOLD);
+		login.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseReleased(MouseEvent e) {
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				new Login(database);
+				frame.dispose();
+			}
+		});
 		login.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		login.setHorizontalAlignment(JLabel.CENTER);
 		panel.add(login, BorderLayout.SOUTH);
