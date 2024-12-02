@@ -19,7 +19,7 @@ public class CreateUser {
 	}
 
 	public void create() {
-		String insert = "INSERT INTO `users`(`FirstName`, `LastName`, `Email`, `Password`) VALUES ('" + u.getFirstName()
+		String insert = "INSERT INTO users (FirstName, LastName, Email, Password) VALUES ('" + u.getFirstName()
 				+ "','" + u.getLastName() + "','" + u.getEmail() + "','" + u.getPassword() + "')";
 
 		try {
@@ -30,7 +30,7 @@ public class CreateUser {
 	}
 
 	public boolean isEmailUsed() {
-		String select = "SELECT * FROM 'users' WHERE 'Email' = '" + u.getEmail() + "'; ";
+		String select = "SELECT * FROM users WHERE Email = '" + u.getEmail() + "'; ";
 		boolean used = false;
 		try {
 			ResultSet rs = database.getStatement().executeQuery(select);
@@ -46,7 +46,7 @@ public class CreateUser {
 		u.setFriends(new ArrayList<>());
 		u.setLikes(new ArrayList<>());
 		u.setPosts(new ArrayList<>());
-		String select = "SELECT 'ID' FROM 'users' WHERE 'Email' = '" + u.getEmail() + "' AND 'Password' = '"
+		String select = "SELECT ID FROM users WHERE Email = '" + u.getEmail() + "' AND Password = '"
 				+ u.getPassword() + "' ; ";
 		try {
 			ResultSet rs = database.getStatement().executeQuery(select);

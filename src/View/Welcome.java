@@ -78,7 +78,7 @@ public class Welcome {
 					new Alert("Password cannot empty", frame);
 					return;
 				}
-				if (password.getText().length()<6) {
+				if (password.getText().length() < 6) {
 					new Alert("Password must constains at least 6 characters", frame);
 					return;
 				}
